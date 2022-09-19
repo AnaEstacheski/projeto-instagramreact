@@ -1,17 +1,21 @@
 export default function Stories() {
+    const stories = [
+        "9gag",
+        "meowed",
+        "barked",
+        "nathanwpylestrangeplanet",
+        "wawawicomics",
+        "respondeai",
+        "filomoderna",
+        "memeriagourmet",
+    ]
+
     return (
         <div class="stories">
-            <Story img="./assets/img/9gag.svg" user="9gag" />
-            <Story img="./assets/img/meowed.svg" user="meowed" />
-            <Story img="./assets/img/barked.svg" user="barked" />
-            <Story img="./assets/img/nathanwpylestrangeplanet.svg" user="nathanwpylestrangeplanet" />
-            <Story img="./assets/img/wawawicomics.svg" user="wawawicomics" />
-            <Story img="./assets/img/respondeai.svg" user="respondeai" />
-            <Story img="./assets/img/filomoderna.svg" user="filomoderna" />
-            <Story img="./assets/img/memeriagourmet.svg" user="memeriagourmet" />
-
+          {stories.map(story => <Story user={story} />)}
+          
             <div class="setinha">
-            <ion-icon name="chevron-forward-circle"></ion-icon>
+                <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>
     )
@@ -21,7 +25,7 @@ function Story(props) {
     return (
         <div class="story">
           <div class="imagem">
-            <img src={props.img} alt="texto"/>
+            <img src={"./assets/img/" + props.user + ".svg"} alt={props.user + "profile image"} />
           </div>
           <div class="usuario">
             {props.user}
