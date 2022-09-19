@@ -18,14 +18,14 @@ export default function Stories() {
 }
 
 function Story(props) {
-
     return (
         <div class="story">
-              <div class="imagem">
-                <img src={props.img} alt=""/>
-              </div>
-              <div class={props.user}>
-              </div>
+          <div class="imagem">
+            <img src={props.img} alt="texto"/>
+          </div>
+          <div class="usuario">
+            {props.user}
+          </div>
         </div>
     )
 }

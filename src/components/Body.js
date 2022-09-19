@@ -1,21 +1,12 @@
 import Sidebar from "./SideBar"
-import Posts from "./Posts"
-import Stories from "./Stories"
+import Content from "./Content"
 
 export default function Body() {
     return (
         <div class="corpo">
-            <Left />
+            <Content />
             <Sidebar />
         </div>
     )
 }
 
-function Left() {
-    return (
-        <div class="esquerda">
-            <Stories />
-            <Posts />
-        </div>        
-    )
-}
