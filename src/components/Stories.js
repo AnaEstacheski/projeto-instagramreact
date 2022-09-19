@@ -18,6 +18,7 @@ export default function Stories() {
 }
 
 function Story(props) {
+
     return (
         <div class="story">
               <div class="imagem">
