@@ -1,22 +1,28 @@
+import React from "react";
+
 export default function SideBar() {
+    const [name, setName] = React.useState('Catana')
     const userData = {
-        name: "Catana",
         img: "./assets/img/catanacomics.svg",
         user: "catanacomics",
       };
 
+    function changeUserName() {
+        const newUserName = prompt('Altere o nome do seu usuário')
+        setName(newUserName)
+    }
+
     return (
         <div class="sidebar">
-
           <User 
-          name={userData.name}
+          name={name}
           img={userData.img}
           user={userData.user}
+          handleClick={() => changeUserName()}
           />
           <Suggestions />
           <Links />
           <CopyRight />
-
         </div>
     )
 }
@@ -29,7 +35,7 @@ function User(props) {
                     <strong>{props.user}</strong>
                     <span>
                     {props.name}
-                    <ion-icon name="pencil"></ion-icon>
+                    <ion-icon name="pencil" onClick={props.handleClick}></ion-icon>
                     </span>
                 </div>
         </div>
