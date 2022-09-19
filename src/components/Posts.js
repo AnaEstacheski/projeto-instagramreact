@@ -1,3 +1,4 @@
+import React from "react"
 export default function Posts() {
     const posts = [
         {
@@ -28,12 +29,24 @@ export default function Posts() {
 }
 
 function Post(props) {
+    const [likeCounter, setLikeCounter] = React.useState(props.likesTotal)
+    const [liked, setLiked] = React.useState(false)
 
-    const actionsIcons = [
-        "heart-outline",
-        "chatbubble-outline",
-        "paper-plane-outline"
-    ]
+    function like() {
+        if (liked === false) {
+          setLikeCounter(likeCounter + 1);
+          setLiked(true)
+        } else {
+          setLikeCounter(likeCounter - 1);
+          setLiked(false)
+        }
+      }
+
+    const [marcked, setMarcked] = React.useState(false)
+    function savePost() {
+        let isMarked = (marcked ? false : true)
+        setMarcked(isMarked)
+    }
 
     return (
         <div class="post">
@@ -54,10 +67,12 @@ function Post(props) {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        {actionsIcons.map(icon => <ion-icon name={icon}></ion-icon>)}
+                        <ion-icon name={props.liked ? "heart" : "heart-outline"} class={(props.liked) && ('hearted')} ></ion-icon>
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                        <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon name={marcked ? "bookmark" : "bookmark-outline"} onClick={savePost}></ion-icon>
                     </div>
                 </div>
 

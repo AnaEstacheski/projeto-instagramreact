@@ -235,6 +235,7 @@ body {
   margin-left: 14px;
   font-weight: 300;
   color: #8E8E8E;
+  cursor: pointer;
 }
 
 .sidebar > .usuario .texto strong {
@@ -308,6 +309,10 @@ body {
 
 .logo-mobile, .instagram-mobile {
   display: none !important;
+}
+
+.hearted {
+  color: #ed4956;
 }
 
 @media (max-width: 935px) {
